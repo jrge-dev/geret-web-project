@@ -4,33 +4,37 @@ $titleName = "Antenas - Sitio Web";
 require_once("header.php")
 
 ?>
+<div class="container">
 <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>John</td>
-      <td>Doe</td>
-      <td>@social</td>
-    </tr>
-  </tbody>
+
+<thead>
+  <tr>
+    <th>Código antena</th>
+    <th>Ip</th>
+    <th>Estado</th>
+    <th>Acciones</th>
+  </tr>
+
+</thead>
+<tbody>
+  
+    <?php 
+$antenas = new Antenas();
+$getAntenas = $antenas->getAntenas();
+
+foreach ($getAntenas as $row): ?>
+  <tr>
+    <td><?= $row['codigo_antena'] ?> </td>
+    <td><?= $row['ip'] ?></td>
+    <td><?= $row['estado'] ?></td> 
+    <td><button type="button" class="btn btn-primary">Editar</button></td>
+
+  </tr>
+    <br>
+    
+    <?php $row?>
+<?php endforeach; ?>
+</tbody>
 </table>
+
+</div>
