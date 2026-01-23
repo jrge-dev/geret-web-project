@@ -6,6 +6,17 @@ $id = $_GET['id'];
 
 $antena = new Antenas();
 
+#Verifica si se envió el form. Envia alerta y redirige
+if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+    $estado = $_POST['cambio-estado'];
+    $antena->updateAntena($id,$estado);
+    echo "<script>
+    alert('estado actualizado');
+    
+    </script>";
+    
+}
+
 ?>
 
 <h1>
@@ -14,9 +25,15 @@ $antena = new Antenas();
     ?>
 </h1>
 
-<button>
+<form method="POST">
+    <select name="cambio-estado" class="form-select" aria-label="Selecciones nuevo estado">
+        <option selected>Cambiar Estado</option>
+        <option value="activo">Activo</option>
+        <option value="inactivo">Inactivo</option>
+    </select>
+
+    <button type="submit" class="btn btn-primary">
     Cambiar estado
-    <?php 
-    $antena->updateAntena($id);
-    ?>
 </button>
+</form>
+
