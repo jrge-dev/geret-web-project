@@ -12,7 +12,9 @@ class Antenas{
         return $this->db->query("SELECT *FROM antenas");
     }
 
-    public function changeAntena(){
+    public function updateAntena($id){
+        return $this->db->query("UPDATE antenas SET estado='desactivo' WHERE id='$id'");
+        
 
     }
 }
