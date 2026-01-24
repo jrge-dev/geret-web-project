@@ -12,8 +12,8 @@ class Antenas{
         return $this->db->query("SELECT *FROM antenas");
     }
 
-    public function updateAntena($id){
-        return $this->db->query("UPDATE antenas SET estado='desactivo' WHERE id='$id'");
+    public function updateAntena($id, $estado){
+        return $this->db->query("UPDATE antenas SET estado='$estado' WHERE id='$id'");
         
 
     }

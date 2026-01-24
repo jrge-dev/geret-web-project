@@ -2,12 +2,19 @@
 $titleName = "Editar Antena";
 require_once("header.php"); 
 require_once ("./../app/models/antenas.php");
+session_start();
+if(!isset($_SESSION['admin'])){
+  header("Location:./login.php");
+  exit();
+}
+
+
+
 $id = $_GET['id'];
 $codigo =$_GET['codigo'];
 $estadoActual = $_GET['estado'];
 $antena = new Antenas();
 
-#Verifica si se envió el form. Envia alerta y redirige
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     $estado = $_POST['cambio-estado'];
     $antena->updateAntena($id,$estado);
@@ -20,7 +27,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 ?>
 
-<div class="container">
+<div class="container mt-5">
+    <h1 class="text-center mb-5" >Editar estado </b></h1>
     
     <table class="table">
         <thead>

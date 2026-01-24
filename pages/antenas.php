@@ -1,10 +1,20 @@
 <?php
 require_once "../app/models/antenas.php";
 $titleName = "Antenas - Sitio Web";
+
+session_start();
+if(!isset($_SESSION['admin'])){
+  header("Location:./login.php");
+  exit();
+}
+
 require_once("header.php")
+
 
 ?>
 <div class="container">
+<h1 class="text-center mt-5">Listado de antenas</h1>
+
 <table class="table">
 
 <thead>
@@ -27,12 +37,18 @@ foreach ($getAntenas as $row): ?>
     <td><?= $row['codigo_antena'] ?> </td>
     <td><?= $row['ip'] ?></td>
     <td><?= $row['estado'] ?></td> 
-    <td><button type="button" class="btn btn-primary">Editar</button></td>
+    <td>
+      <?php 
+      $id = $row['id'];
+      $codigo = $row['codigo_antena'];
+      $estado = $row['estado'];
+        echo " <a href='/web/pages/editarAntena.php?codigo=$codigo&id=$id&estado=$estado' class='btn btn-primary'> Editar </a>";
+
+       ?>
+    </td>
 
   </tr>
-    <br>
     
-    <?php $row?>
 <?php endforeach; ?>
 </tbody>
 </table>
