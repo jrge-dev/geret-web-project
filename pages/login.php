@@ -12,13 +12,14 @@ $error = $_GET['error'];
       <input name="username" type="text" id="inputUsuario" class="mt-2 form-control" placeholder="Email address" required="" autofocus="">
          <label for="inputPassword" class="sr-only">Contraseña</label>
       <input name="password" type="password" id="inputPassword" class="mt-2 form-control" placeholder="Password" required="">
-      <button class="mt-3 btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-      <p class="mt-5 mb-3 text-muted">© geret - prueba técnica</p>
+      <button class="mt-3 mb-3 btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
       <?php
       if($error){
-        echo "<p>$error</p>";
+        echo "<p class='fs-6 text-danger'>$error</p>";
       }
       ?>
+      <p class="mt-5 mb-3 text-muted">© geret - prueba técnica</p>
+      
     </form>
     </div>
     
