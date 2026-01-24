@@ -19,13 +19,17 @@
 </head>
 <body>
    <div class="container">
-    <header class="d-flex justify-content-center py-3">
-      <ul class="nav nav-pills">
-        <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Inicio</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Antenas</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Precios</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Acerca</a></li>
+    <header class="d-flex justify-content-between py-3">
+        
+    <ul class="nav nav-pills">
+      <li>
+        <a href="../index.php" class="nav-link active" aria-current="page">Inicio</a>
+      </li>
+    </ul>
+
+      <ul class="nav nav-pills">        
+        <li class="nav-item"><a href="./antenas.php" class="nav-link">Antenas</a></li>
+        <li class="nav-item"><a href="./login.php" class="nav-link">Login</a></li>
       </ul>
     </header>
   </div>
