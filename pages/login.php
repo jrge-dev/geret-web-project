@@ -1,7 +1,10 @@
 <?php
 require_once('header.php');
 $error = $_GET['error'];
-
+session_start();
+if(isset($_SESSION['admin'])){
+  header("Location: ./logout.php");
+}
 ?>
 <body class="text-center">
     <div class="mt-5 container d-flex justify-content-center ">
