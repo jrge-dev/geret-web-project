@@ -19,7 +19,7 @@ if ($userRegister) {
     header("Location: ../../pages/antenas.php");
     exit();
 } else {
-    header("Location: ../../pages/header.php");
+    header("Location: ../../pages/login.php?error=credenciales invalidas");
     exit();
 }
 ?>
