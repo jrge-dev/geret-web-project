@@ -27,11 +27,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 ?>
 
-<div class="container mt-5">
+<div class="container">
     <h1 class="text-center mb-5" >Editar estado </b></h1>
     
-    <table class="table">
-        <thead>
+    <table class="table table-responsive align-middle  table-borderless">
+        <thead class="table-light">
             <tr>
                 <th>Código antena</th>
                 <th>Estado actual</th>
