@@ -12,9 +12,12 @@ require_once("header.php")
 
 
 ?>
-<div class="container">
-  <h1 class="text-center text-primary mt-5">Listado de antenas</h1>
-
+<div class="container d-flex flex-column">
+<div class="d-flex justify-content-between align-items-center w-100">
+  <h1 class="text-primary mt-5 mb-5">Listado de antenas</h1>
+  <a href="agregarAntena.php" class="btn btn-success">+ Agregar antena</a>
+</div>
+  
   <table class="table table-responsive align-middle  table-borderless">
 
     <thead class="table-light">
@@ -39,10 +42,8 @@ require_once("header.php")
           <td><?= $row['estado'] ?></td>
           <td>
             <?php
-            $id = $row['id'];
-            $codigo = $row['codigo_antena'];
-            $estado = $row['estado'];
-            echo " <a href='/geret/web/pages/editarAntena.php?codigo=$codigo&id=$id&estado=$estado' class='btn btn-primary'> Editar </a>";
+            $id = $row['id'];  
+            echo " <a href='/geret/web/pages/editarAntena.php?id=$id' class='btn btn-primary'> Editar </a>";
 
             ?>
           </td>
