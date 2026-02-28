@@ -23,7 +23,7 @@
   <div class="bg-primary-subtle rounded-5 container mb-5">
     <header class="d-flex justify-content-between py-2">
 
-      <ul class="nav">
+      <ul class="nav bg-light">
         <li>
 
           <a href="../index.php" class="nav-link active" aria-current="page">
