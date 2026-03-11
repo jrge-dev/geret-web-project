@@ -1,6 +1,6 @@
 <?php
+session_start();
 require_once("./header.php");
-session_start()
 ?>
 
 <div class="container">

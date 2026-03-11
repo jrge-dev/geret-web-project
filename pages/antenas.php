@@ -1,8 +1,7 @@
 <?php
+session_start();
 require_once "../app/models/antenas.php";
 $titleName = "Antenas - Sitio Web";
-
-session_start();
 if (!isset($_SESSION['admin'])) {
   header("Location:./login.php");
   exit();

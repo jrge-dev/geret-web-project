@@ -1,8 +1,8 @@
 
 <?php
+session_start();
 require_once('header.php');
 $error = $_GET['error'];
-session_start();
 if(isset($_SESSION['admin'])){
   header("Location: ./logout.php");
 }
