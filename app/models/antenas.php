@@ -7,8 +7,16 @@ class Antenas{
     {
         global $connectDb;
         $this->db = $connectDb;
+  }
+
+  public function addAntena($codigo, $ip, $estado) {
+    $sql = "INSERT INTO antenas (codigo_antena, ip, estado) VALUES (?, ?, ?)";
+    $stm = $this->db->prepare($sql);
+    return $stm->execute([$codigo,$ip,$estado]);
     }
-    public function getAntenas(){
+
+
+  public function getAntenas(){
         return $this->db->query("SELECT *FROM antenas");
     }
   public function getAntenaById($id){
